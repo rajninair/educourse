@@ -33,6 +33,10 @@ import CoursePage from './components/CoursePage';
 import Profile from './components/Profile';
 import ChangePassword from './components/Profile/ChangePassword';
 import UpdateProfile from './components/Profile/UpdateProfile';
+import Dashboard from './components/Admin/Dashboard';
+import CreateCourse from './components/Admin/CreateCourse';
+import AdminCourses from './components/Admin/AdminCourses';
+import Users from './components/Admin/Users';
 
 function App() {
   // To disable right click
@@ -66,9 +70,16 @@ function App() {
           <Route exact path="/subscribe" element={<Subscribe />} />
           <Route exact path="/paymentsuccess" element={<PaymentSuccess />} />
           <Route exact path="/paymentfail" element={<PaymentFail />} />
-          <Route exact path="/notfound" element={<NotFound />} />
 
-          <Route exact path="*" element={<NoPage />} />
+          {/* Admin Routes */}
+          <Route exact path="/admin/dashboard" element={<Dashboard />} />
+          <Route exact path="/admin/createcourse" element={<CreateCourse />} />
+          <Route exact path="/admin/courses" element={<AdminCourses />} />
+          <Route exact path="/admin/users" element={<Users />} />
+
+          {/* Page Not Found routes */}
+          <Route exact path="*" element={<NotFound />} />
+          {/* <Route exact path="*" element={<NoPage />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
