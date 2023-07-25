@@ -25,14 +25,24 @@ import ResetPassword from './components/Auth/ResetPassword';
 import Contact from './components/Contact/Contact';
 import Request from './components/Request/Request';
 import About from './components/About/About';
+import Subscribe from './components/Payments/Subscribe';
+import PaymentSuccess from './components/Payments/PaymentSuccess';
+import PaymentFail from './components/Payments/PaymentFail';
+import NotFound from './components/Payments/NotFound';
+import CoursePage from './components/CoursePage';
 
 function App() {
+  // To disable right click
+  window.addEventListener('contextmenu', e => {
+    e.preventDefault();
+  });
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/courses" element={<Courses />} />
+          <Route exact path="/course/:id" element={<CoursePage />} />
           <Route exact path="/request" element={<Request />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/contact" element={<Contact />} />
@@ -44,6 +54,11 @@ function App() {
             path="/resetpassword/:token"
             element={<ResetPassword />}
           />
+
+          <Route exact path="/subscribe" element={<Subscribe />} />
+          <Route exact path="/paymentsuccess" element={<PaymentSuccess />} />
+          <Route exact path="/paymentfail" element={<PaymentFail />} />
+          <Route exact path="/notfound" element={<NotFound />} />
 
           <Route exact path="*" element={<NoPage />} />
         </Route>
