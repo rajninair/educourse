@@ -30,6 +30,9 @@ import PaymentSuccess from './components/Payments/PaymentSuccess';
 import PaymentFail from './components/Payments/PaymentFail';
 import NotFound from './components/Payments/NotFound';
 import CoursePage from './components/CoursePage';
+import Profile from './components/Profile';
+import ChangePassword from './components/Profile/ChangePassword';
+import UpdateProfile from './components/Profile/UpdateProfile';
 
 function App() {
   // To disable right click
@@ -46,6 +49,11 @@ function App() {
           <Route exact path="/request" element={<Request />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/contact" element={<Contact />} />
+
+          <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/changepassword" element={<ChangePassword />} />
+          <Route exact path="/updateprofile" element={<UpdateProfile />} />
+
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/forgetpassword" element={<ForgetPassword />} />
