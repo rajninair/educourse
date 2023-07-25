@@ -41,10 +41,11 @@ const CoursePage = () => {
           controlsList="nodownload noremoteplayback"
         ></video>
         <Heading
+          size={'lg'}
           m="4"
           children={`#${lectureNumber + 1} ${lectures[lectureNumber].title}`}
         />
-        <Heading m="4" children={`${lectures[lectureNumber].title}`} />
+        <Heading size={'md'} mx="4" children="Description" />
         <Text m="4" children={`${lectures[lectureNumber].description}`} />
       </Box>
 
