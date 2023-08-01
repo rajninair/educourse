@@ -28,7 +28,7 @@ const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [imgPreview, setImgPreview] = useState('');
+  const [imagePreview, setImagePrev] = useState('');
   const [image, setImage] = useState('');
 
   const changeImageHandler = e => {
@@ -38,7 +38,7 @@ const Register = () => {
       console.log('image', image);
       reader.readAsDataURL(file);
       reader.onloadend = () => {
-        setImgPreview(reader.result);
+        setImagePrev(reader.result);
         setImage(file);
       };
     } else {
@@ -55,7 +55,7 @@ const Register = () => {
 
         <form style={{ width: '100%' }}>
           <Box my={'4'} display={'flex'} justifyContent={'center'}>
-            <Avatar size={'2xl'} src={imgPreview} />
+            <Avatar size={'2xl'} src={imagePreview} />
           </Box>
           <Box my={'4'}>
             <FormLabel htmlFor="name" children="Name" />

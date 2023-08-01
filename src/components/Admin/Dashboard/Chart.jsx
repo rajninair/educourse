@@ -23,7 +23,7 @@ ChartJS.register(
   Legend
 );
 export const LineChart = () => {
-  const labels = ['abc1', 'abc2', 'abc3', 'abc4', 'abc5'];
+  const labels = getLastYearMonth();
   const options = {
     responsive: true,
     plugins: {
@@ -65,3 +65,40 @@ export const DoughnutChart = () => {
   };
   return <Doughnut data={data} />;
 };
+
+function getLastYearMonth() {
+  const labels = [];
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+
+  const currentMonth = new Date().getMonth();
+  const remain = 11 - currentMonth;
+  for (let index = currentMonth; index < months.length; index++) {
+    console.log('currentMonth', currentMonth);
+
+    const element = months[index];
+    labels.unshift(element);
+    if (index === 0) break;
+  }
+  console.log(labels);
+
+  for (let index = 11; index > remain; index++) {
+    const element = months[index];
+    labels.unshift(element);
+    if (index === currentMonth) break;
+  }
+  return labels;
+}
+getLastYearMonth();

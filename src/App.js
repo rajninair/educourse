@@ -40,9 +40,9 @@ import Users from './components/Admin/Users';
 
 function App() {
   // To disable right click
-  window.addEventListener('contextmenu', e => {
-    e.preventDefault();
-  });
+  // window.addEventListener('contextmenu', e => {
+  //   e.preventDefault();
+  // });
   return (
     <BrowserRouter>
       <Routes>

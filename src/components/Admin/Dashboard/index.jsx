@@ -11,7 +11,7 @@ import {
 import cursor from '../../../assets/images/cursor.jpeg';
 import Sidebar from '../Sidebar';
 import { RiArrowDownLine, RiArrowUpLine } from 'react-icons/ri';
-import { DoughnutChart, LineChart } from './Chart';
+// import { DoughnutChart, LineChart } from './Chart';
 
 const Databox = ({ title, qty, qtyPercentage, profit }) => {
   return (
@@ -103,7 +103,7 @@ const Dashboard = () => {
           />
 
           {/* Line graph here */}
-          <LineChart />
+          {/* <LineChart /> */}
         </Box>
 
         <Grid templateColumns={['1fr', '2fr 1fr']}>
@@ -130,7 +130,7 @@ const Dashboard = () => {
               children="Users"
             />
             {/* Doughnut graph */}
-            <DoughnutChart />
+            {/* <DoughnutChart /> */}
           </Box>
         </Grid>
       </Box>
